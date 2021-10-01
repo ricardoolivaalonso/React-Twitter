@@ -1,0 +1,12 @@
+.box{
+    &__button{
+        @include f15();
+        width: 90px;
+        height: 40px;
+
+        background-color: $blue;
+        color: $white;
+        border-radius: 30px;
+        cursor: pointer;
+    }
+}

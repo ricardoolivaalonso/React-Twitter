@@ -46,4 +46,7 @@ $mq6: 500px;
         --max-width: 100%;
         --center: calc(100% - var(--left));
     }
+    @media(max-width: $mq6){
+        --padding: 12px;
+    }
 }

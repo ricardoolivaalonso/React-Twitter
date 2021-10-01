@@ -27,6 +27,8 @@
             grid-column-gap: 0;
         }
 
+        @media (max-width: $mq6){ display: none; }
+        
         &:hover{
             background-color: rgba($blue, .1);
             transition: $transition;

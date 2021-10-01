@@ -1,0 +1,8 @@
+.emojibox{
+    position: absolute;
+    z-index: 5;
+    top: 100%;
+    border-radius: 8px;
+    border: 1px solid rgba($blue, .25);
+    box-shadow: 0 0 4px rgba($blue, .75), 0 0 12px rgba($blue, .5);
+}

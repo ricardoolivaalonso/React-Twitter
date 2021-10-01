@@ -3,28 +3,4 @@
         @include f15();
         margin: 5px ;
     }
-    &__item{
-        width: 100%;
-        display: grid;
-        grid-template-columns: auto 1fr auto;
-        grid-template-areas: 'avatar info button';
-        grid-gap: 10px;
-        place-items: center start;
-
-        padding: var(--padding);
-        transition: $transition;
-        border-bottom: $border;
-        background-color: $gray-bg1;
-        cursor: pointer;
-
-        &:hover{
-            background-color: darken($gray-bg1, 3);
-            transition: $transition;
-        }
-    }
-        &__info{
-            grid-area: info;
-            display: flex;
-            flex-direction: column;
-        }
 }

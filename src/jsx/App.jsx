@@ -10,11 +10,13 @@ import { ListsPage } from "./01-pages/ListsPage";
 import { MenuSection } from "./02-sections/MenuSection"
 import { ProfilePage } from "./01-pages/ProfilePage";
 import { BookmarksPage } from "./01-pages/BookmarksPage";
+import { ScrollToTop } from './00-helpers/ScrollToTop.jsx';
 
 const App = () => {
  	return(
 		<Provider store={store} >
 			<Router>
+				<ScrollToTop />
 				<MenuSection></MenuSection>
 				<Switch>
 					<Route path="/" exact>

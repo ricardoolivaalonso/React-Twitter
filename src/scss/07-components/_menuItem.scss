@@ -9,6 +9,18 @@
         }
         @media(min-height: 705px) { margin-bottom: 8px; }
         @media(min-height: 800px) { margin-bottom: 13px; }
+
+        @media (max-width: $mq6){ 
+            justify-content: center;
+
+            &:nth-of-type(1),
+            &:nth-of-type(6),
+            &:nth-of-type(7),
+            // &:nth-of-type(8),
+            &:nth-of-type(9),
+            &:nth-of-type(9),
+            &:nth-of-type(10) { display: none; }
+        }
     }
         &__link{
             display: flex;
@@ -47,7 +59,7 @@
                 margin-left: calc(var(--padding) * 1.33);
                 margin-right: var(--padding);
 
-                @media(max-width: $mq1){ display: none; color: red; }
+                @media(max-width: $mq1){ display: none; }
             }
           
 }

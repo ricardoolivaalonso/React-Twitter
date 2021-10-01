@@ -15,34 +15,4 @@
             overflow-x: auto;
         }
     }
-        &__item{
-            flex-grow: 1;
-            @include flex(flex, center, center, row, nowrap);
-            height: 100%;
-            transition: $transition;
-
-            &:hover{
-                background-color: rgba($blue, .1);
-                transition: $transition;
-            }
-
-            @media (max-width: $mq5){ padding: 0 var(--padding); }
-        }
-            &__link{
-                @include f15();
-                display: block;
-                height: 100%;
-                padding: 0 5px;
-
-                color: $gray-bg2;
-                white-space: nowrap;
-                overflow: hidden;
-                border-top: 14px solid transparent;
-
-                &::first-letter{ text-transform: capitalize;}
-                &--active{ 
-                    color: $black;
-                    border-bottom: 4px solid $blue; 
-                }
-            }
 }

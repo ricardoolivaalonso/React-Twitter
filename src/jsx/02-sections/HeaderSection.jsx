@@ -1,8 +1,13 @@
 import { MainTitleElement } from "../04-elements/MainTitleElement"
+import { UserAvatarElement } from "../04-elements/UserAvatarElement"
+import { useSelector } from 'react-redux'
 
 const HeaderSection = ({title}) => {
+    const User = useSelector(state => state.tweetReducer)
+
     return(
         <header className="header">
+            <UserAvatarElement avatar={User.avatar} mod='header__avatar' />
             <MainTitleElement>{title}</MainTitleElement>
             <a className="header__icon" href='#placeholder'>
                 <svg className="header__svg g-svg" viewBox="0 0 24 24">

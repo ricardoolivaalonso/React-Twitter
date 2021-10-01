@@ -5,6 +5,7 @@ const TabsLinkComponent = ({text, link, index, setTab}) => {
         let tabs = [...e.currentTarget.parentElement.children]
         tabs.map( t => t.children[0].classList.remove('tabs__link--active') )
         e.currentTarget.children[0].classList.add('tabs__link--active')
+        window.scrollTo(0, 0)
 
         setTab(index)
     }
