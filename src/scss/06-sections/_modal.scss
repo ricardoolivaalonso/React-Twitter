@@ -1,0 +1,64 @@
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: rgba($black, .6);
+}
+
+.modal{
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    grid-template-areas: 'photo content';
+    z-index: 100;
+    display: none;
+
+    @media(max-width: $mq4){
+        grid-template-columns: 1fr;
+        grid-template-areas: 'photo ';
+    }
+
+    &__close{
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 40px;
+        width: 40px;
+        padding-bottom: 5px;
+
+        font-size: 40px;
+        border-radius: 50%;
+        background-color: rgba($black, .6);
+        color: $white;
+        transform: rotateZ(45deg);
+    }
+
+    &__attachment{
+        grid-area: photo;
+        padding-top: 30px;
+        padding-bottom: 70px;
+
+        &-picture{
+            width: 100%;
+            height: calc(100vh - 100px);
+            object-fit: cover;
+        }
+    }
+    &__content{
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+
+        background-color: $white;
+        padding: 15px 20px;
+    }
+
+    .tweet__info{ margin-top: 15px; }
+    .tweet__stats{margin-top: 15px; width: 100%; }
+    .messages__item{ pointer-events: none; border-bottom: none; }
+}

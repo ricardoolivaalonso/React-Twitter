@@ -1,0 +1,16 @@
+.showlink-element{
+    @include f15();
+    display: flex;
+    padding: var(--padding);
+    font-size: 14px;
+
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    color: $blue;
+    transition: $transition;
+    
+    &:hover{
+        background-color: darken($gray-bg1, 3);
+        transition: $transition;
+    }
+}

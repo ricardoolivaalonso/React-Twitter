@@ -1,0 +1,29 @@
+.messages{
+
+    &__header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        width: 100%;
+
+        padding: 15px;
+        height: 50px;
+        border-bottom: $border;
+        background-color: $white;
+
+    }
+    &__main-title{ @include f19(); }
+    &__stats{ display: flex;}
+
+    &__slider{
+        width: 100%;
+        height: calc(100% - 50px);
+        overflow-y: scroll;
+    }
+        &__list{
+            width: 100%;
+            height: 100%;
+        }
+}

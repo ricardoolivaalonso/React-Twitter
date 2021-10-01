@@ -1,0 +1,20 @@
+.header{
+    &__icon{
+        @include flex(flex, center, center, row, nowrap);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        cursor: pointer;
+        transition: $transition;
+
+        &:hover{
+            background-color: rgba($blue, .1);
+            transition: $transition;
+        }
+    }
+        &__svg{
+            width: 22.5px;
+            height: 22.5px;
+            fill: $blue;
+        }
+}

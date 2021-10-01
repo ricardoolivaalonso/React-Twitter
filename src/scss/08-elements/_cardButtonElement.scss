@@ -1,0 +1,19 @@
+.cardbutton-element{
+    grid-area: button;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 15px;
+
+    @include f15();
+    text-transform: capitalize;
+    border-radius: 18px;
+    background-color: $blue;
+    color: $white;
+    transition: $transition;
+
+    &:hover{
+        transition: $transition;
+        background-color: darken($blue, 5);
+    }
+}

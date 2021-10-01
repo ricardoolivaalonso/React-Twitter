@@ -1,0 +1,67 @@
+.tweet{
+    &__stats{
+        display: flex;
+        &-container{
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            padding-top: 8px;
+            transition: $transition;
+
+            &:hover{
+                .tweet__stats-number,
+                .tweet__stats-svg{
+                    fill: $blue;
+                    color: $blue;
+                    transition: $transition;
+                    opacity: 1;
+                }
+                .tweet__stats-icon{
+                    background-color: rgba($blue, .1);
+                    transition: $transition;
+                    cursor: pointer;
+                }
+            }
+            &--retweet:hover{
+                .tweet__stats-number,
+                .tweet__stats-svg{
+                    fill: $green;
+                    color: $green;
+                }
+                .tweet__stats-icon{ background-color: rgba($green, .1); }
+            }
+            &--like:hover{
+                .tweet__stats-number,
+                .tweet__stats-svg{
+                    fill: $pink;
+                    color: $pink;
+                }
+                .tweet__stats-icon{ background-color: rgba($pink, .1); }
+            }
+        }
+            &-number{ @include f13(); }
+            &-icon{
+                margin-right: 5px;
+                width: 30px;
+                height: 30px;
+                padding: 5px;
+                border-radius: 50%;
+
+                &--big{
+                    width: 40px;
+                    height: 40px;
+                    padding: 8px;
+                    cursor: pointer;
+                }
+            }
+                &-svg{
+                    filter: $gray-link;
+                    opacity: .7;
+
+                    &--fill{
+                        fill: $blue;
+                        opacity: 1;
+                    }
+                }
+    }
+}

@@ -1,0 +1,20 @@
+/******************/
+.is-messages-open{
+    height: 520px;
+    // overflow-y: auto;
+    // transition: $transition;
+}
+.is-icon-rotate{
+    transform: rotateZ(180deg);
+}
+.is-element-visible{
+    visibility: visible ;
+    opacity: 1;
+}
+.is-modal-visible{
+    display: grid;
+}
+.is-search-visible{
+    visibility: visible;
+    opacity: 1;
+}

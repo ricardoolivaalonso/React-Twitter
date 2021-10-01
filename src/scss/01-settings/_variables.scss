@@ -1,0 +1,49 @@
+/***** Colors ******/
+$blue: #1da1f2;
+$green: #438e78;
+$pink: #e0245e;
+$white: #ffffff;
+$black: #000000;
+$gray-bg1: #F7F9FA;
+$gray-bg2: #777777;
+$gray-link: #5b7083;
+$border: 1px solid lighten($gray-bg2, 45);
+$transition: 200ms;
+/***** Queries *****/
+$mq1: 1265px;
+$mq2: 1120px;
+$mq3: 1000px;
+$mq4: 800px;
+$mq5: 760px;
+$mq6: 500px;
+/***** Size *****/
+:root{
+    --left: 275px;
+    --center: 600px;
+    --right: 390px;
+    --top: 53px;
+    --max-width: calc(var(--left) + var(--center) + var(--right));
+    --padding: 15px;
+
+    @media(max-width: $mq1){
+        --left: 88px;
+        --right: 370px;
+        --max-width: 90%;
+    }
+    @media(max-width: $mq2){
+        --center: 1fr;
+        --right: 350px;
+    }
+    @media(max-width: $mq3){
+        --center: 600px;
+        --max-width: 80%;
+    }
+    @media(max-width: $mq4){
+        --max-width: 90%;
+    }
+    @media(max-width: $mq5){
+        --left: 75px;
+        --max-width: 100%;
+        --center: calc(100% - var(--left));
+    }
+}

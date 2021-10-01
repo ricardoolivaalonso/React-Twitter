@@ -1,0 +1,5 @@
+.maintitle-element{
+    @include f19();
+
+    &::first-letter{ text-transform: capitalize; }
+}

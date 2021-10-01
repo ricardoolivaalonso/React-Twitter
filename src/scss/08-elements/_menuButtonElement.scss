@@ -1,0 +1,61 @@
+.menu{
+    &__button{
+        @include f15();
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        max-width: 230px;
+        height: 47px;
+        margin-top: 8.5px;
+
+        text-transform: capitalize;
+        border-radius: 30px;
+        background-color: $blue;
+        color: $white;
+        transition: $transition;
+        cursor: pointer;
+
+        &:hover{
+            background-color: darken($blue, 10);
+            transition: $transition;
+        }
+
+        @media(max-width: $mq1) {
+            width: 47px;
+            height: 47px;
+            border-radius: 50%;
+        }
+    }
+    &__svg{
+        &--fill{
+            width: 30px;
+            height: 30px;
+            fill: $blue;
+        }
+        &--stroke{
+            fill: transparent;
+            stroke: $black;
+            stroke-width: 1.25;
+        }
+        &--mobile{
+            fill: $white;
+            &:hover{ fill: $white; }
+        }
+    }
+    &__span{
+        @media(max-width: $mq1) { display: none;}
+    }
+    &__icon{
+        &--mobile{
+            display: none;
+            justify-content: center;
+            align-items: center;
+            width: 35px;
+            height: 35px;
+            fill: $black;
+            @media(max-width: $mq1) { display: flex;}
+        }
+    }
+   
+}

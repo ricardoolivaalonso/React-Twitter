@@ -1,0 +1,45 @@
+.menu{
+    &__settings{
+        display: grid;
+        grid-template-columns: auto 1fr;
+        grid-template-rows: min-content 2fr;
+        grid-template-areas:
+            'avatar name'
+            'avatar id'
+        ;
+        grid-column-gap: 8px;
+
+        width: 100%;
+        max-width: 250px;
+        margin: 8px 0;
+        padding: 4px 8px;
+        
+        border-radius: 30px;
+        transition: $transition;
+        cursor: pointer;
+
+        @media(max-width: $mq1) { 
+            width: min-content;
+            width: auto;
+            max-width: 0;
+            padding: 0; 
+            border-radius: 50%;
+            grid-column-gap: 0;
+        }
+
+        &:hover{
+            background-color: rgba($blue, .1);
+            transition: $transition;
+        }   
+        &-avatar{ 
+            grid-area: avatar; 
+            display: flex;
+            justify-content: flex-start;
+        }
+        &-name{ grid-area: name; }
+        &-id{  grid-area: id; }
+
+        &-name,
+        &-id{ @media(max-width: $mq1) { display: none;} }
+    }
+}

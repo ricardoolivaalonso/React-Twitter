@@ -1,0 +1,153 @@
+.tweet{
+    &__item{
+        display: grid;
+        grid-template-columns: 60px 1fr;
+        grid-template-areas: 'avatar body';
+        padding: var(--padding);
+    }
+        &__body{ 
+            grid-area: body; 
+        }
+            &__profile{
+                width: 100%;
+                display: flex;
+                align-items: center;
+                &-id:hover{ text-decoration: underline; }
+
+                &-id,
+                &-name,
+                &-time{ 
+                    margin-right: 5px; 
+                    white-space: nowrap;
+                    overflow: hidden;
+
+                    @media(max-width: $mq6){ max-width: 80px; }
+                }
+                &-time{
+                    @include f15l(); 
+                    line-height: 1;
+                    &::before{
+                        content: '\0387';
+                        display: inline-flex;
+                        margin-right: 5px;
+                        font-size: 18px;
+                    }
+                    @media(max-width: $mq6){ max-width: 40px; }
+                }
+                &-actions{
+                    @include flex(flex, center, center, row, nowrap);
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    transition: $transition;
+                    margin-left: auto;
+                    padding: 8px;
+                    position: relative;
+
+                    &:hover{
+                        background-color: rgba($blue, .1);
+                        transition: $transition;
+                    }
+                }
+                    &-icon { fill: $gray-bg2; }
+
+                &-delete,
+                &-hide{
+                    display: grid;
+                    grid-template-columns: auto 1fr;
+                    grid-column-gap: 8px;
+                    position: absolute;
+                    min-width: 200px;
+                    width: 20vw;
+                    max-width: 280px;
+                    right: 0;
+                    top: -150%;
+                    padding: 10px;
+
+                    border-radius: 4px;
+                    box-shadow: rgba(101, 119, 134, 0.2) 0px 0px 15px, rgba(101, 119, 134, 0.15) 0px 0px 3px 1px;
+                    background-color: $white;
+                    z-index: 5;
+                    visibility: hidden;
+
+                }
+                &-delete{
+                    &:hover{
+                        span{ color: $blue; }
+                        svg{ fill: $blue; }
+
+                    }
+                    svg{
+                        fill: $pink;
+                        width: 20px;
+                        height: 20px;
+                    }
+                    span{
+                        @include f15l();
+                        color: $pink;
+                    }
+                }
+                &-hide{
+                    &:hover{
+                        span{ color: $blue; }
+                        svg{ fill: $blue; }
+
+                    }
+                    svg{
+                        fill: $gray-link;
+                        width: 20px;
+                        height: 20px;
+                    }
+                    span{
+                        @include f15l();
+                        color: $gray-link;
+                    }
+                }
+            }
+            &__description{
+                @include f15();
+                font-weight: 400;
+                line-height: 20px;
+                word-break: break-all;
+
+            }
+                &__tag,
+                &__ht{
+                    color: $blue;
+                    line-height: 20px;
+                    cursor: pointer;
+
+                    &:hover{ text-decoration: underline; }
+                }
+                &__ht{
+                    position: relative;
+                    margin-right: 5px;
+                    &::before{
+                        content: '#';
+                        display: inline-flex;
+                    }
+                }
+        &__attachment{
+            margin-top: 10px;
+
+            &--two{
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-column-gap: 2px;
+
+                .tweet__attachment-picture{
+                    aspect-ratio: 1/1;
+                    &:nth-of-type(1){ border-radius: 10px 0 0 10px; }
+                    &:nth-of-type(2){ border-radius: 0 10px 10px 0; }
+                }
+            }
+            &-picture{
+                width: 100%;
+                aspect-ratio: 1.8/1;
+                border-radius: 10px;
+                object-fit: cover;
+                cursor: pointer;
+            }
+        }
+       
+}

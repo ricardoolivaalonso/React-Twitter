@@ -1,0 +1,10 @@
+.useravatar-element{
+    grid-area: avatar;
+    
+    &__photo{
+        width: 49px;
+        height: 49px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}

@@ -1,0 +1,12 @@
+.empty{
+    &__title{
+        @include f15();
+        font-size: 31px;
+        line-height: 1.2;
+    }
+    &__description{
+        margin: 10px 0 calc(var(--padding) * 2);
+
+        &::first-letter{ text-transform: capitalize; }
+    }
+}

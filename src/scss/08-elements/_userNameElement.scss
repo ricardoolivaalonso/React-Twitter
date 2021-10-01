@@ -1,0 +1,8 @@
+.username-element{
+    grid-area: name;
+    @include f15();
+    
+    &::first-letter{
+        text-transform: capitalize;
+    }
+}
