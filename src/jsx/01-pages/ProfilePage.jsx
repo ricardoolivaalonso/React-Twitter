@@ -12,6 +12,7 @@ import { GallerySection } from '../02-sections/GallerySection'
 import { FollowSection } from "../02-sections/FollowSection"
 import { NewsSection } from "../02-sections/NewsSection"
 import { MessagesSection } from '../02-sections/MessagesSection'
+import { ModalSection } from '../02-sections/ModalSection'
 
 const ProfilePage = () => {
     const [tab, setTab] = useState(0)
@@ -20,6 +21,7 @@ const ProfilePage = () => {
     return(
         <>
             <MetaTags><title>Caroline Holman (@carolinehm)</title></MetaTags>
+            { User.modalOpen && <ModalSection current='contentProfile'/>}
             <HeaderSection title={User.name} />
             <div className="timeline">
                 <BioSection />                

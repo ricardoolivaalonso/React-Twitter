@@ -1,9 +1,11 @@
-import { User } from "../../redux/initialState"
+import { useSelector } from 'react-redux'
 import { CardButtonElement } from "../04-elements/CardButtonElement"
 import { MainTitleElement } from "../04-elements/MainTitleElement"
 import { UserElement } from "../04-elements/UserElement"
 
 const BioSection = () => {
+    const User = useSelector(state => state.tweetReducer)
+
     return(
         <section className="bio">
             <img className="bio__background" src={User.gallery[3]} alt="This is my placeholder" />

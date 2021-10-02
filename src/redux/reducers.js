@@ -7,7 +7,8 @@ import {
     UNLIKE_TWEET,
     CREATE_TWEET,
     OPEN_TWEET,
-    DELETE_TWEET
+    DELETE_TWEET,
+    OPEN_MODAL
 } from './types'
 
 
@@ -39,12 +40,12 @@ const tweetReducer = (state = User, action) => {
                         )
                     
                     })
-                ]
+                ],
+           
             }
 
         case UNLIKE_TWEET:
             // let currentUnlike = action.payload.current
-
             return {
                 ...state,
                 contentProfile: [
@@ -60,7 +61,6 @@ const tweetReducer = (state = User, action) => {
                                                 ...tweet.tweet.stats,
                                                 liked: true,
                                                 likes: action.payload.number + 1 
-                                                
                                             }
 
                                         }
@@ -72,7 +72,8 @@ const tweetReducer = (state = User, action) => {
                         )
                     
                     })
-                ]
+                ],
+          
             }
             
         case CREATE_TWEET:
@@ -121,18 +122,27 @@ const tweetReducer = (state = User, action) => {
             }
 
         case DELETE_TWEET:
-
             return {
                 ...state,
                 contentProfile: [
                     ...state.contentProfile.map( tweets => {
                         return (
-                            tweets.filter( tweet =>  tweet.id !== action.payload.id )
+                            tweets.filter( tweet => tweet.id !== action.payload.id )
                         )
                     })
                 ]
             }
 
+        case OPEN_MODAL:
+            let modal = state.contentProfile.map( tweets => 
+                    tweets.filter( tweet => tweet.id === action.payload )
+                ).flat()
+
+            return {
+                ...state,
+                modalOpen: !state.modalOpen,
+                modal: modal
+            }
 
         default: 
             return state;

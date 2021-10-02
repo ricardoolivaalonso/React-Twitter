@@ -9,6 +9,7 @@ import { SearchSection } from '../02-sections/SearchSection'
 import { NewsSection } from "../02-sections/NewsSection"
 import { FollowSection } from "../02-sections/FollowSection"
 import { MessagesSection } from '../02-sections/MessagesSection'
+import { ModalSection } from '../02-sections/ModalSection'
 
 const HomePage = () => {
     const [tab, setTab] = useState(0)
@@ -17,6 +18,7 @@ const HomePage = () => {
     return(
         <>
             <MetaTags><title>Inicio / Twitter</title></MetaTags>
+            { User.modalOpen && <ModalSection current='timeline'/>}
             <HeaderSection title="inicio"/>
             <div className="timeline">
                 <BoxSection />

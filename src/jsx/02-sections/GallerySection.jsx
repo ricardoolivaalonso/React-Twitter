@@ -1,6 +1,8 @@
-import { User } from "../../redux/initialState"
+import { useSelector } from 'react-redux'
 
 const GallerySection = () => {
+    const User = useSelector(state => state.tweetReducer)
+
     return(
         <section className="gallery">
             {

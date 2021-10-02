@@ -3,7 +3,8 @@ import {
     UNLIKE_TWEET,
     CREATE_TWEET,
     OPEN_TWEET,
-    DELETE_TWEET
+    DELETE_TWEET,
+    OPEN_MODAL
 } from './types'
 
 const LIKE_TWEET_ACTION = (id) => ({
@@ -25,11 +26,16 @@ const DELETE_TWEET_ACTION = (id) => ({
     type: DELETE_TWEET,
     payload: id
 })
+const OPEN_MODAL_ACTION = (id) => ({
+    type: OPEN_MODAL,
+    payload: id
+})
 
 export {
     LIKE_TWEET_ACTION,
     UNLIKE_TWEET_ACTION,
     CREATE_TWEET_ACTION,
     OPEN_TWEET_ACTION,
-    DELETE_TWEET_ACTION
+    DELETE_TWEET_ACTION,
+    OPEN_MODAL_ACTION
 }

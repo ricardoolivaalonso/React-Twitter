@@ -1,4 +1,3 @@
-// import { User } from "../../redux/initialState"
 import { MentionCardComponent } from "../03-components/MentionCardComponent"
 import { useSelector } from 'react-redux'
 

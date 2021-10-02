@@ -1,17 +1,17 @@
 import {
     DELETE_TWEET_ACTION,
 } from '../../redux/actions'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { useState } from 'react'
 
 
 const TweetOptionsElement = ({current, id, user}) => {
 
     const dispatch = useDispatch()
+    const User = useSelector(state => state.tweetReducer)
     const [ isVisible, setIsVisible ] = useState(false)
 
     const deleteTweet = (e,id) => {
-
         setIsVisible(false)
         dispatch(DELETE_TWEET_ACTION({id, current}))
     }
@@ -25,7 +25,7 @@ const TweetOptionsElement = ({current, id, user}) => {
                 <circle cx={19} cy={12} r={2} />
             </svg>
             {
-                user === '@carolinehm' ?
+                user === User.id ?
 
                 <div className={`tweet__profile-delete ${isVisible ? 'is-search-visible':''}`} onClick={ (e)=>deleteTweet(e, id) }>
                     <svg viewBox="0 0 24 24" className="g-svg">

@@ -1,4 +1,8 @@
 import parse from 'html-react-parser'
+import { useSelector, useDispatch } from 'react-redux'
+import {
+    OPEN_MODAL_ACTION,
+} from '../../redux/actions'
 // 
 import { UserAvatarElement } from "../04-elements/UserAvatarElement"
 import { UserElement } from "../04-elements/UserElement"
@@ -9,8 +13,13 @@ import { TweetStatsComponent } from "./TweetStatsComponent"
 import { TweetOptionsElement } from '../04-elements/TweetOptionsElement'
 
 const TweetCardComponent = ({id, user, tweet, current}) => {
+    const dispatch = useDispatch()
+    const User = useSelector(state => state.tweetReducer)
+
+    console.log(current)
 
     return (
+        <>
         <article className="tweet__item" key={id}>
             <UserAvatarElement avatar={user.avatar} />
 
@@ -32,12 +41,22 @@ const TweetCardComponent = ({id, user, tweet, current}) => {
                 </div>
 
                 <div className={`tweet__attachment ${tweet.type ? tweet.type : ''}`}>
-                    { tweet.attachment.map( (t, index) => <img key={index} className="tweet__attachment-picture" src={tweet.attachment[index]} alt="This is a placeholder"/> )}
+                    { 
+                        tweet.attachment.map( (t, index) => 
+                            <img key={index} 
+                                className="tweet__attachment-picture" 
+                                src={tweet.attachment[index]} 
+                                alt="This is a placeholder"
+                                onClick={()=>dispatch(OPEN_MODAL_ACTION(id))}
+                            />)
+                    }
                 </div>
 
                 <TweetStatsComponent stats={tweet.stats} id={id} current={current}/>
             </div>
-        </article>
+        </article>  
+
+        </>
     )
 }
 

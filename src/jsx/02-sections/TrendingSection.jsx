@@ -1,9 +1,11 @@
-import { User } from "../../redux/initialState"
+import { useSelector } from 'react-redux'
 // 
 import { NewsCardComponent } from "../03-components/NewsCardComponent"
 import { TrendingHeroComponent } from "../03-components/TrendingHeroComponent"
 
 const TrendingSection = ({tab}) => {
+    const User = useSelector(state => state.tweetReducer)
+
     return(
         <section className="trending">
 

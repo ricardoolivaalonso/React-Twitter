@@ -1,4 +1,3 @@
-
 const TabsLinkComponent = ({text, link, index, setTab}) => {
    
     const activeTab = (e,index) => {

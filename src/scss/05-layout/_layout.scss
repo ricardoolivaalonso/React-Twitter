@@ -204,3 +204,24 @@
 
     @media(max-width: $mq3){ display: none; }
 }
+
+.modal{
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    grid-template-areas: 'photo content';
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    
+    background-color: rgba($black, .85);
+
+    @media(max-width: $mq3){
+        grid-template-columns: 1fr;
+        grid-template-areas: 'photo ';
+        background-color: darken($black, .95);
+    }
+}

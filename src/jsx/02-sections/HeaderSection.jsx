@@ -1,6 +1,6 @@
+import { useSelector } from 'react-redux'
 import { MainTitleElement } from "../04-elements/MainTitleElement"
 import { UserAvatarElement } from "../04-elements/UserAvatarElement"
-import { useSelector } from 'react-redux'
 
 const HeaderSection = ({title}) => {
     const User = useSelector(state => state.tweetReducer)

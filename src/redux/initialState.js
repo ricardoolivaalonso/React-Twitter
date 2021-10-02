@@ -1201,6 +1201,30 @@ const User = {
     ],
 
     menuOpen: false,
+    modalOpen: false,
+
+    modal: [{
+        id: uuidv4(),
+        user: {
+            id: '',
+            name: '',
+            avatar: null,
+            timestamp: '',
+        },
+        tweet: {
+            description: '',
+            tags: [],
+            hashtags: [],
+            attachment: [],
+            type: '',
+            stats: {
+                comments: 0,
+                retweets: 0,
+                likes: 0,
+                liked: false
+            }
+        }
+    }], 
 }
 
 export { UI, User }
