@@ -13,5 +13,5 @@
 
 Live: https://ricardoolivaalonso-react03.vercel.app/
 
-#### I'm still working on some features :D
+#### I'm still working on some features :D,  also I will remake some things.
 
