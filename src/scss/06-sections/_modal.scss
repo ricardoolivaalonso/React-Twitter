@@ -38,12 +38,28 @@
         display: flex;
         flex-wrap: wrap;
         align-content: flex-start;
-
         background-color: $white;
         padding: var(--padding) 20px;
 
         @media(max-width: $mq3){ display: none; }
 
     }
+        &__profile{
+            display: grid;
+            grid-template-columns: 60px 1fr 60px;
+            grid-template-rows: 40% 60%;
+
+            grid-template-areas:  
+                "avatar name settings"
+                "avatar id settings "
+            ;
+            width: 100%;
+            margin-bottom: 15px;
+
+            &-name{ grid-area: name; }
+            &-id{ grid-area: id; }
+            &-settings{ grid-area: settings; }
+
+        }
 
 }

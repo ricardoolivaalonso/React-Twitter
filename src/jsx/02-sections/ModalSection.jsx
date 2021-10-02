@@ -29,24 +29,21 @@ const ModalSection = ({current}) => {
             </div>
 
             <div className="modal__content">
-                <UserAvatarElement avatar={User.modal[0].user.avatar}></UserAvatarElement>
 
-                <div className="tweet__body">
-                    <div className="tweet__profile">
-                        <UserNameElement mod='tweet__profile-name'>{User.modal[0].user.name}</UserNameElement>
-                        <UserElement mod='tweet__profile-id'>{User.modal[0].user.id}</UserElement>
-                        <span className="tweet__profile-time">{User.modal[0].user.timestamp}</span>
-                        <TweetOptionsElement current={current} id={User.modal[0].id} user={User.id}/>
-                    </div>
+                <div className="modal__profile">
+                    <UserAvatarElement avatar={User.modal[0].user.avatar}></UserAvatarElement>
+                    <UserNameElement mod='modal__profile-name'>{User.modal[0].user.name}</UserNameElement>
+                    <UserElement mod='modal__profile-id'>{User.modal[0].user.id}</UserElement>
+                    <TweetOptionsElement className='modal__profile-settings' current={current} id={User.modal[0].id} user={User.id}/>
+                </div>
 
-                    <div className="tweet__info">
-                        <p className="tweet__description">
-                            {parse(`${User.modal[0].tweet.description}`)}
-                            { User.modal[0].tweet.tags.map( (t, index) => <TweetTagElement key={index}>{t}</TweetTagElement>) }
-                            { User.modal[0].tweet.hashtags.map( (t, index) => <TweetHashtagElement key={index}>{t}</TweetHashtagElement>) }
-                        </p>
-                        <TweetStatsComponent stats={User.modal[0].tweet.stats} id={User.modal[0].id} current={current}/>
-                    </div>
+                <div className="tweet__info">
+                    <p className="tweet__description">
+                        {parse(`${User.modal[0].tweet.description}`)}
+                        { User.modal[0].tweet.tags.map( (t, index) => <TweetTagElement key={index}>{t}</TweetTagElement>) }
+                        { User.modal[0].tweet.hashtags.map( (t, index) => <TweetHashtagElement key={index}>{t}</TweetHashtagElement>) }
+                    </p>
+                    <TweetStatsComponent stats={User.modal[0].tweet.stats} id={User.modal[0].id} current={current}/>
                 </div>
             </div>
         </div>
