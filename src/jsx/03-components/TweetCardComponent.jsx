@@ -1,5 +1,5 @@
 import parse from 'html-react-parser'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import {
     OPEN_MODAL_ACTION,
 } from '../../redux/actions'
@@ -14,9 +14,6 @@ import { TweetOptionsElement } from '../04-elements/TweetOptionsElement'
 
 const TweetCardComponent = ({id, user, tweet, current}) => {
     const dispatch = useDispatch()
-    const User = useSelector(state => state.tweetReducer)
-
-    console.log(current)
 
     return (
         <>
