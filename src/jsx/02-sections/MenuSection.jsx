@@ -10,7 +10,7 @@ const MenuSection = () => {
         <nav className="menu">
             <ul className="menu__list">
                 {
-                    UI.menu.map(m => (
+                    UI.menu.map( (m,index) => (
                         <MenuLinkComponent
                             key={ m.id }
                             id={ m.id }
@@ -18,6 +18,7 @@ const MenuSection = () => {
                             href={ m.href }
                             svg={ m.svg }
                             mod={ m.mod }
+                            idx = {index}
                         />
                     ))
                 }

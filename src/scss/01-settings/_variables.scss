@@ -19,24 +19,18 @@ $mq6: 500px;
 /***** Size *****/
 :root{
     --left: 275px;
-    --center: 600px;
-    --right: 390px;
+    --center: minmax(auto, calc(1265px / 2));
+    --right: minmax(290px, calc(1265px / 3.4));
     --top: 53px;
-    --max-width: calc(var(--left) + var(--center) + var(--right));
+    --max-width: 1265px;
     --padding: 15px;
 
     @media(max-width: $mq1){
         --left: 88px;
-        --right: 370px;
         --max-width: 90%;
     }
-    @media(max-width: $mq2){
-        --center: 1fr;
-        --right: 350px;
-    }
     @media(max-width: $mq3){
-        --center: 600px;
-        --max-width: 80%;
+        --max-width: 85%;
     }
     @media(max-width: $mq4){
         --max-width: 90%;
@@ -44,7 +38,6 @@ $mq6: 500px;
     @media(max-width: $mq5){
         --left: 75px;
         --max-width: 100%;
-        --center: calc(100% - var(--left));
     }
     @media(max-width: $mq6){
         --padding: 12px;

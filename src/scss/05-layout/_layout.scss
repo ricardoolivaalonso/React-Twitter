@@ -11,6 +11,16 @@
     min-height: 100vh;
     position: relative;
 
+    @media (max-width: $mq3){
+        grid-template-columns: var(--left) var(--center);
+        grid-template-areas:
+            'menu header'
+            'menu timeline'
+        ;
+    }
+    @media (max-width: $mq4){
+        grid-template-columns: var(--left) calc(100% - var(--left));
+    }
     @media (max-width: $mq6){
         grid-template-columns: 100%;
         grid-template-areas:
@@ -59,10 +69,11 @@
 
     }
 }
-// This is just a wrapper, no section file
+// This is just a wrapper, it doesnt have the section file
 .timeline{
     grid-area: timeline;
     width: 100%;
+    max-width: 100%;
     position: relative;
     border-right: $border;
     background-color: $white;
@@ -71,7 +82,7 @@
 
     @media (max-width: $mq6){ margin-bottom: 50px; }
 }
-// This is just a wrapper, no section file
+// This is just a wrapper, it doesnt have the section file
 .sidebar{
     grid-area: sidebar;
     position: sticky;
@@ -91,7 +102,6 @@
         position: sticky;
         top: 0px;
     } 
-
     &::-webkit-scrollbar { display: none; }
     @media(max-width: $mq3){ display: none; }
 }
