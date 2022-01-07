@@ -9,8 +9,9 @@
 - bem
 - itcss
 - atomic
+- localStorage
 
-Live: https://ricardoolivaalonso-react08.vercel.app/
+Live: https://ricardoolivaalonso-react03.vercel.app/
 
-#### I'm still working on it, I'll add reducers, localStorage and extra features.
+#### I'm still working on it, I'll add extra features.
 
